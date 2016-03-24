@@ -1,0 +1,197 @@
+{
+    "header" : {
+        "columnsHeader" : [ {
+            "code" : "CODE_BU",
+            "desc" : "Bureau",
+            "colRng" : 1
+        }, {
+            "code" : "CODE_AGENCE",
+            "desc" : "Agence",
+            "colRng" : 2
+        }, {
+            "code" : "H_SUPPLIERID1",
+            "desc" : "ID fournisseur",
+            "colRng" : 3
+        }, {
+            "code" : "SUPPLIERNAME",
+            "desc" : "Nom du fournisseur",
+            "colRng" : 4
+        }, {
+            "code" : "H_DOCNBR1",
+            "desc" : "N° document",
+            "colRng" : 5
+        }, {
+            "code" : "H_DOCDATE",
+            "desc" : "Date document",
+            "colRng" : 6
+        }, {
+            "code" : "H_NETAMT",
+            "desc" : "Montant HT",
+            "colRng" : 7
+        }, {
+            "code" : "H_TOTAMT",
+            "desc" : "Montant TTC",
+            "colRng" : 8
+        }, {
+            "code" : "STATUS",
+            "desc" : "Status",
+            "colRng" : 9
+        }, {
+            "code" : "CODE_ROUTE",
+            "desc" : "Code route",
+            "colRng" : 10
+        }, {
+            "code" : "USRIDXX",
+            "desc" : "Destinataires",
+            "colRng" : 11
+        }, {
+            "code" : "WSTIDX",
+            "desc" : "WSTIDX",
+            "colRng" : 12
+        }, {
+            "code" : "DOCIDXGED",
+            "desc" : "DOCIDXGED",
+            "colRng" : 13
+        }, {
+            "code" : "H_ENTIER",
+            "desc" : "H_ENTIER",
+            "colRng" : 14
+        } ]
+    },
+    "documents" : [ {
+        "docIdxGed" : "20120110_0002_6",
+        "fields" : [ {
+            "value" : "009",
+            "translation" : "Capgemini SA"
+        }, {
+            "value" : "B10",
+            "translation" : "Legal & Juridique"
+        }, {
+            "value" : "SLFICUS_442",
+            "translation" : null
+        }, {
+            "value" : "LAFARGE COUVERTURE",
+            "translation" : null
+        }, {
+            "value" : "1117396",
+            "translation" : null
+        }, {
+            "value" : "2003-11-05",
+            "translation" : null
+        }, {
+            "value" : 1016.15,
+            "translation" : null
+        }, {
+            "value" : 1215.32,
+            "translation" : null
+        }, {
+            "value" : "ST_RESP_BUDGET",
+            "translation" : "En attente de validation responsable budget"
+        }, {
+            "value" : "RT3",
+            "translation" : null
+        }, {
+            "value" : "bud2",
+            "translation" : null
+        }, {
+            "value" : 18,
+            "translation" : null
+        }, {
+            "value" : "20120110_0002_6",
+            "translation" : null
+        }, {
+            "value" : 0,
+            "translation" : null
+        } ]
+    }, {
+        "docIdxGed" : "20120110_0003_7",
+        "fields" : [ {
+            "value" : "009",
+            "translation" : "Capgemini SA"
+        }, {
+            "value" : "B04",
+            "translation" : "Services Généraux"
+        }, {
+            "value" : "FR90325202711",
+            "translation" : null
+        }, {
+            "value" : "COSMETIQUE ACTIVE -ROCHE POSAY",
+            "translation" : null
+        }, {
+            "value" : "810295174",
+            "translation" : null
+        }, {
+            "value" : "2007-08-21",
+            "translation" : null
+        }, {
+            "value" : 1440.72,
+            "translation" : null
+        }, {
+            "value" : 1723.10,
+            "translation" : null
+        }, {
+            "value" : "ST_COMPTA",
+            "translation" : "En attente de prise en charge par les comptables "
+        }, {
+            "value" : "RT2B",
+            "translation" : null
+        }, {
+            "value" : "BBI,cis,cp1,cp2,dbo,flb",
+            "translation" : null
+        }, {
+            "value" : 31,
+            "translation" : null
+        }, {
+            "value" : "20120110_0003_7",
+            "translation" : null
+        }, {
+            "value" : 0,
+            "translation" : null
+        } ]
+    }, {
+        "docIdxGed" : "20120110_0002_5",
+        "fields" : [ {
+            "value" : "009",
+            "translation" : "Capgemini SA"
+        }, {
+            "value" : "B09",
+            "translation" : "O'brian"
+        }, {
+            "value" : "10010",
+            "translation" : null
+        }, {
+            "value" : "ACELYS",
+            "translation" : null
+        }, {
+            "value" : "070123",
+            "translation" : null
+        }, {
+            "value" : "2007-01-31",
+            "translation" : null
+        }, {
+            "value" : 1050.00,
+            "translation" : null
+        }, {
+            "value" : 1255.80,
+            "translation" : null
+        }, {
+            "value" : "ST_PAID",
+            "translation" : "Factures archivées "
+        }, {
+            "value" : "RT2",
+            "translation" : null
+        }, {
+            "value" : "finan2",
+            "translation" : null
+        }, {
+            "value" : -1,
+            "translation" : null
+        }, {
+            "value" : "20120110_0002_5",
+            "translation" : null
+        }, {
+            "value" : 0,
+            "translation" : null
+        } ]
+    } ]
+}

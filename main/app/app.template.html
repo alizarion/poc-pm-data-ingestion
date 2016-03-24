@@ -1,0 +1,44 @@
+<div ng-controller="MainController" class="full-height">
+    <it-side-menus>
+        <it-side-menu-header it-hide-button-menu="true">
+            <!-- Header Logo -->
+            <div class="navbar-header">
+                <a class="navbar-brand">
+                    <span><img src="assets/img/SCPA_Suppliers_50px.png" width="32" height="32"/></span>
+                    POC-ProductionManager-PostgreSQL
+                </a>
+            </div>
+
+            <!-- Header Menu-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group" name="searchParamForm">
+                        <input type="text" class="form-control"  ng-model="$root.searchRequest.serviceUrl" placeholder="SERVICE URL">
+                    </div>
+
+                </form>
+
+            </div>
+        </it-side-menu-header>
+        <it-side-menu>
+
+        </it-side-menu>
+        <it-side-menu-content>
+            <!-- WebApp Content -->
+
+
+            <!-- View container -->
+            <div  class="container-fluid">
+                <!-- View title -->
+                <div class="row" ng-show="$root.pageTitle && $root.pageTitle.length > 0">
+                    <div class="it-view-header col-md-12">
+                        <h3>Generated request : <a target="_blank" href="{{$root.lastRequestURL}}">{{$root.lastRequestURL}}</a></h3>
+                        <hr/>
+                    </div>
+                </div>
+                <!-- View content -->
+                <div ng-view class="ng-view-class"></div>
+            </div>
+        </it-side-menu-content>
+    </it-side-menus>
+</div>

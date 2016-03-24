@@ -1,0 +1,105 @@
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[0].key}}"
+           ng-model="searchQueryFields.query[0].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[1].key}}"
+           ng-model="searchQueryFields.query[1].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[2].key}}"
+           ng-model="searchQueryFields.query[2].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[3].key}}"
+           ng-model="searchQueryFields.query[3].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[4].key}}"
+           ng-model="searchQueryFields.query[4].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[5].key}}"
+           ng-model="searchQueryFields.query[5].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[6].key}}"
+           ng-model="searchQueryFields.query[6].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[7].key}}"
+           ng-model="searchQueryFields.query[7].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[8].key}}"
+           ng-model="searchQueryFields.query[8].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text"
+           it-label="{{searchQueryFields.query[9].key}}"
+           ng-model="searchQueryFields.query[9].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label"
+           type="text"
+           it-label="{{searchQueryFields.query[10].key}}"
+           ng-model="searchQueryFields.query[10].value">
+</div>
+
+<h4>Date de création</h4>
+<div class="form-group">
+    <input it-input class="form-control floating-label" type="text" it-label="Debut"
+           bs-datepicker ng-model="searchQueryFields.query[11].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label"
+           bs-datepicker
+           type="text" it-label="Fin"
+           ng-model="searchQueryFields.query[12].value">
+</div>
+<h4>Date d'échéance</h4>
+<div class="form-group">
+    <input it-input class="form-control floating-label"
+           type="text" it-label="Debut"
+           bs-datepicker
+           ng-model="searchQueryFields.query[13].value">
+</div>
+<div class="form-group">
+    <input it-input class="form-control floating-label"
+           bs-datepicker
+           type="text" it-label="Fin" ng-model="searchQueryFields.query[14].value">
+</div>
+
+        <h2>Metadata</h2>
+<table class="table">
+    <thead>
+    <tr>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <a href="" class="btn btn-default  btn-success" ng-click="addQueryField()" role="button">+</a>
+        </div>
+    </tr>
+    <tr>
+        <th>Key</th>
+        <th>Value</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="field in searchQueryFields.query  | limitTo:15:15">
+        <td><input class="form-control" type="text"  ng-model="field.key" placeholder="Key"/></td>
+        <td><input class="form-control" type="text"  ng-model="field.value"   placeholder="Value"/></td>
+        <th> <button class="btn btn-default btn-success btn-xs" ng-click="removeQueryField(field)">X</button> </th>
+    </tr>
+
+
+    </tbody>
+</table>
