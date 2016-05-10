@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Les dépendences du builder
  */
 var pkg = require('./package.json');
@@ -18,7 +18,7 @@ var flatten = require('gulp-flatten');
 var ghPages = require('gulp-gh-pages');
 var buildConfig = require('./build.config.js');
 var sh = require('shelljs');
-var dedupe = require('gulp-dedupe');
+//var dedupe = require('gulp-dedupe');
 var serve = require('gulp-serve');
 var karma = require('gulp-karma');
 
@@ -130,7 +130,7 @@ gulp.task('html', function() {
 gulp.task('fonts', function() {
     gulp.src('main/assets/lib/**/*.{eot,svg,ttf,otf,woff,woff2}')
         .pipe(flatten())
-        .pipe(dedupe({same: false}))
+//        .pipe(dedupe({same: false}))
         .pipe(gulp.dest('./dist/assets/fonts'));
 });
 
@@ -168,7 +168,7 @@ gulp.task('angular-locales', function() {
         .pipe(gulp.dest('./dist/assets/lib/angular-i18n'));
 });
 
-gulp.task('serve', serve('main'));
+gulp.task('serve', serve('dist'));
 
 /**
  * Obsérve les modification des scss et compile en css
