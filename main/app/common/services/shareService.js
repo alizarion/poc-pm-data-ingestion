@@ -46,7 +46,7 @@ angular.module('share.ws.demo')
                     $top: searchRequest.paginationOptions.pageSize,
                     $skip : skip,
                     /*$orderby : searchRequest.paginationOptions.sort.column,*/
-                    filter : queryField
+                    $filter : queryField
                 }
 
             })
