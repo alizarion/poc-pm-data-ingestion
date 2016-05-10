@@ -1,5 +1,4 @@
 'use strict';
-
 angular.module('share.ws.demo', [
     'itesoft',
     'ngRoute',
@@ -42,5 +41,19 @@ angular.module('share.ws.demo', [
         $rootScope.$on('$routeChangeSuccess', function () {
             $rootScope.pageTitle = $route.current.title;
         });
-    }]);
+    }])
+    .factory('urlBuilder', ['$httpParamSerializer',
+        function($httpParamSerializer) {
+            function buildUrl(url, params) {
+                var serializedParams = $httpParamSerializer(params);
+
+                if (serializedParams.length > 0) {
+                    url += ((url.indexOf('?') === -1) ? '?' : '&') + serializedParams;
+                }
+
+                return url;
+            }
+
+            return buildUrl;
+        }]);
 

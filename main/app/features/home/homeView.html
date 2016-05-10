@@ -88,8 +88,17 @@
 
                     </div>
                 </div>
-                <div it-bottom-glue="" ui-grid="shareGridOptions" ui-grid-resize-columns  ui-grid-auto-resize="" >
+                <!--
+                <div it-bottom-glue="" ui-grid="shareGridOptions" ui-grid-expandable ui-grid-odata>
+                -->
+                <div it-bottom-glue="" ui-grid="shareGridOptions" ui-grid-resize-columns  ui-grid-auto-resize="" ui-grid-pagination  class="grid">
+                    <div class="grid-msg-overlay" ng-hide="!loading">
+                        <div class="msg">
+                          <span>Loading Data <i class="fa fa-spinner fa-spin"></i></span>
+                        </div>
+                    </div>
                     <div ng-if="dataSource.length == 0" class="it-watermark">no result</div>
+
                 </div>
             </div>
 
