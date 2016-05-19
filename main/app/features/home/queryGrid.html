@@ -1,7 +1,7 @@
 ﻿<div class="form-group">
     <table class="table">
         <tbody>
-            <tr ng-repeat="field in searchQueryFields.query | limitTo:10">
+            <tr ng-repeat="field in searchQueryFields.query | limitTo:11">
                 <td><input class="form-control" type="text" ng-model="field.key" placeholder="Key"/></td>
                 <td>
                     <select ng-model="field.operator" ng-options="k as v for (v,k) in field.availableOperators">
@@ -11,28 +11,41 @@
             </tr>
         </tbody>
     </table>
+    <h4>Assignations</h4>
+    <div class="form-group">
+        <tags-input ng-model="searchQueryFields.assignations" >
+            <auto-complete source="loadTags()" min-length="1" load-on-down-arrow="true"></auto-complete>
+        </tags-input>
+    </div>
+
     <h4>Date de création</h4>
     <div class="form-group">
-        <input it-input class="form-control floating-label" type="text" it-label="Debut"
-               bs-datepicker ng-model="searchQueryFields.query[11].value">
+        <input it-input class="form-control floating-label"
+            type="text"
+            it-label="Debut"
+            bs-datepicker
+            ng-model="searchQueryFields.query[12].value">
     </div>
     <div class="form-group">
         <input it-input class="form-control floating-label"
                bs-datepicker
                type="text" it-label="Fin"
-               ng-model="searchQueryFields.query[12].value">
+               ng-model="searchQueryFields.query[13].value">
     </div>
     <h4>Date d'échéance</h4>
     <div class="form-group">
         <input it-input class="form-control floating-label"
-               type="text" it-label="Debut"
+               type="text"
+               it-label="Debut"
                bs-datepicker
-               ng-model="searchQueryFields.query[13].value">
+               ng-model="searchQueryFields.query[14].value">
     </div>
     <div class="form-group">
         <input it-input class="form-control floating-label"
                bs-datepicker
-               type="text" it-label="Fin" ng-model="searchQueryFields.query[14].value">
+               type="text"
+               it-label="Fin"
+               ng-model="searchQueryFields.query[15].value">
     </div>
 
     <h2>Metadata</h2>
@@ -50,13 +63,15 @@
         </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="field in searchQueryFields.query  | limitTo:15:15">
-                <td><input class="form-control" type="text"  ng-model="field.key" placeholder="Key"/></td>
+            <tr ng-repeat="field in searchQueryFields.query  | limitTo:16:16">
+                <td><input class="form-control" type="text"  ng-model="field.key" placeholder="Key"
+                    title="Attention postfix Int,Integer, Date, Double, Float, String"/></td>
                 <td>
                     <select ng-model="field.operator" ng-options="k as v for (v,k) in field.availableOperators">
                     </select>
                 </td>
-                <td><input class="form-control" type="text"  ng-model="field.value"   placeholder="Value"/></td>
+                <td><input class="form-control" type="text"  ng-model="field.value" placeholder="Value"
+                    title = "Pour les dates format = 2017-05-20T12:33:50"/></td>
                 <th> <button class="btn btn-default btn-success btn-xs" ng-click="removeQueryField(field)">X</button> </th>
             </tr>
         </tbody>

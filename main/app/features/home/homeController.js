@@ -19,8 +19,24 @@ angular.module('share.ws.demo')
 
             $scope.search = function (){
                 $scope.loading = true;
+
                 ShareService.search($rootScope.searchRequest)
                     .then(function(response){
+                        for(var j = 0 ; j < response.data.value.length; j++)
+                        {
+                            var row = response.data.value[j];
+                            var metadata = JSON.parse(row.Metadata);
+                            row.MetadataArray = [];
+                            for (var i in metadata)
+                            {
+                                row.MetadataArray.push(
+                                {
+                                    key : i,
+                                    value: metadata[i]
+                                });
+                            }
+                        }
+
                         $scope.dataSource = [];
                         $scope.dataSource = response.data.value;
                        // $scope.translations = FetchDataService.extractTraduction(response.data);
@@ -39,6 +55,12 @@ angular.module('share.ws.demo')
                         };
                         $scope.shareGridOptions.columnDefs = $scope.myDefs;
                         $scope.loading = false;
+                    })
+                    .catch(function(reason) {
+                        console.log(reason);
+                        $scope.dataSource = [];
+                        $scope.loading = false;
+                        throw reason;
                     });
             };
 
@@ -47,6 +69,7 @@ angular.module('share.ws.demo')
             };
             $scope.shareGridOptions = {
                 data: 'dataSource',
+                expandableRowTemplate: '<ul><li ng-repeat="m in row.entity.MetadataArray">{{m.key}} : {{m.value}}</li></ul>',
                 showGridFooter: true,
                 columnDefs: $scope.myDefs,
                 useExternalPagination: true,
@@ -92,6 +115,4 @@ angular.module('share.ws.demo')
             $scope.filter = function () {
                 $scope.gridApi.grid.refresh();
             };
-
-
         }]);

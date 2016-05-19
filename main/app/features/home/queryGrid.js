@@ -15,10 +15,21 @@ angular.module('share.ws.demo')
 
             $scope.query = {};
 
-
             $scope.addQueryField = function(){
                 $scope.searchQueryFields.query.push(new QueryField('','=='));
             };
+
+            $scope.loadTags = function(query) {
+                return [
+                    'cco',
+                    'sbn',
+                    'dge',
+                    'vco',
+                    'vfu',
+                    'ahu',
+                    'hro',
+                    'nri'];
+                };
 
             $scope.removeQueryField = function(field){
                 var index = $scope.searchQueryFields.query.indexOf(field);

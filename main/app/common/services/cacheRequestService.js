@@ -8,14 +8,18 @@ angular.module('share.ws.demo')
 
         function _load(){
             var backup = angular.fromJson(localStorage.getItem(CACHED_REQUEST_KEY));
-            var searchRequest = {};
-            if (!backup) {
-                searchRequest.paginationOptions = {
+            var searchRequest = {
+                serviceUrl : 'http://clicco2/Poc/Messages',
+                query : [],
+                paginationOptions : {
                     pageNumber: 1,
                     pageSize: 250,
                     sort: {}
-                  };
-                searchRequest.query = [];
+                  },
+                assignations : []
+                };
+
+            if (!backup) {
                 searchRequest.query.push(new QueryField('SenderKey','eq'));
                 searchRequest.query.push(new QueryField('SenderType','eq'));
                 searchRequest.query.push(new QueryField('ActivityKey','eq'));
@@ -26,6 +30,7 @@ angular.module('share.ws.demo')
                 searchRequest.query.push(new QueryField('TaskStatus','eq'));
                 searchRequest.query.push(new QueryField('TaskKey','eq'));
                 searchRequest.query.push(new QueryField('SenderType','eq'));
+                searchRequest.query.push(new QueryField('TaskPriority','le'));
                 searchRequest.query.push(new QueryField('ProcessKey','eq'));
                 searchRequest.query.push(new QueryField('CreationDate','ge'));
                 searchRequest.query.push(new QueryField('CreationDate','le'));
@@ -33,15 +38,10 @@ angular.module('share.ws.demo')
                 searchRequest.query.push(new QueryField('DueDate','le'));
             }
             else {
-                searchRequest = {
-                    query : [],
-                    paginationOptions : backup.paginationOptions || {
-                        pageNumber: 1,
-                        pageSize: 250,
-                        sort: {}
-                      },
-                    serviceUrl : backup.serviceUrl
-                };
+                searchRequest.paginationOptions = backup.paginationOptions || searchRequest.paginationOptions;
+                searchRequest.assignations = backup.assignations || [];
+                searchRequest.serviceUrl = backup.serviceUrl;
+
                 backup.query.forEach(function(element, index, array)
                 {
                     searchRequest.query.push(new QueryField(element.key,element.operator, element.value));

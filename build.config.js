@@ -37,7 +37,8 @@ module.exports = {
         'main/assets/lib/angular-translate-loader-partial/angular-translate-loader-partial.min.js',
         'main/assets/lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
         'main/assets/lib/angular-strap/dist/angular-strap.min.js',
-        'main/assets/lib/angular-strap/dist/angular-strap.tpl.min.js'
+        'main/assets/lib/angular-strap/dist/angular-strap.tpl.min.js',
+        'main/assets/lib/ng-tags-input/ng-tags-input.min.js'
     ],
     /**
      *
@@ -52,6 +53,7 @@ module.exports = {
     ],
     vendorCssFiles: [
         'main/assets/lib/font-awesome/css/font-awesome.min.css',
-        'main/assets/lib/angular-common/dist/assets/fonts/itesoft-bundle.min.css'
+        'main/assets/lib/angular-common/dist/assets/fonts/itesoft-bundle.min.css',
+        'main/assets/lib/ng-tags-input/ng-tags-input.min.css'
     ]
 };

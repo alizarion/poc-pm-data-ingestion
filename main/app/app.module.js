@@ -6,13 +6,20 @@ angular.module('share.ws.demo', [
     'mgcrea.ngStrap.datepicker',
     'mgcrea.ngStrap.timepicker',
     'pascalprecht.translate',
-    'ui.bootstrap.dropdown'
+    'ui.bootstrap.dropdown',
+    'ngTagsInput',
+    'ui.grid.expandable'
     ])
     .config(['$datepickerProvider',function($datepickerProvider) {
 //        angular.extend($datepickerProvider.defaults, {
 //            dateFormat: 'yyyy-mm-ddThh:ii:ssZ',
 //            startWeek: 1
 //        });
+        angular.extend($datepickerProvider.defaults, {
+                dateFormat: 'dd/MM/yyyy',
+                modelDateFormat: "yyyy-MM-ddT00:00:00",
+                dateType: "string"
+            });
     }])
     .config(['$translateProvider',
         '$translatePartialLoaderProvider',
